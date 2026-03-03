@@ -1,111 +1,86 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>My Personal App</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Personal App</title>
 
-<link rel="stylesheet" href="style.css">
-<link rel="manifest" href="manifest.json">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #111;
+            color: white;
+            text-align: center;
+        }
 
-<meta name="theme-color" content="#000000">
+        header {
+            padding: 20px;
+            font-size: 24px;
+            font-weight: bold;
+            background-color: #1f1f1f;
+        }
+
+        .container {
+            padding: 40px 20px;
+        }
+
+        .card {
+            background-color: #1e1e1e;
+            margin: 20px auto;
+            padding: 30px;
+            width: 90%;
+            max-width: 400px;
+            border-radius: 12px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.5);
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: scale(1.03);
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+            font-size: 20px;
+            display: block;
+        }
+
+        footer {
+            margin-top: 40px;
+            padding: 20px;
+            font-size: 14px;
+            background-color: #1f1f1f;
+        }
+    </style>
 </head>
 
 <body>
 
-<!-- LOGIN SCREEN -->
-<div id="loginScreen" class="centered">
-    <h1>🔐 Private Access</h1>
-    <input type="password" id="pinInput" maxlength="4" placeholder="Enter 4-digit PIN">
-    <button onclick="checkPin()">Unlock</button>
-</div>
+<header>
+    My Personal Dashboard
+</header>
 
-<!-- MAIN APP -->
-<div id="app" class="hidden">
+<div class="container">
 
-<nav>
-    <button onclick="showPage('home')">Home</button>
-    <button onclick="showPage('budget')">Budget</button>
-    <button onclick="showPage('gallery')">Gallery</button>
-    <button onclick="showPage('misc')">Misc</button>
-    <button onclick="showPage('settings')">Settings</button>
-</nav>
+    <div class="card">
+        <a href="budget.html">💰 Budget Tracker</a>
+    </div>
 
-<!-- HOME -->
-<section id="home" class="page">
-    <h2>📊 Dashboard</h2>
-    <div class="card" onclick="showPage('budget')">💰 Budget</div>
-    <div class="card" onclick="showPage('gallery')">🖼 Gallery</div>
-    <div class="card" onclick="showPage('misc')">📂 Miscellaneous</div>
-</section>
+    <div class="card">
+        <a href="#">🖼 Gallery (Coming Soon)</a>
+    </div>
 
-<!-- BUDGET -->
-<section id="budget" class="page hidden">
-    <h2>💰 Budget Ledger</h2>
-
-    <input type="text" id="particular" placeholder="Particular">
-    
-    <select id="type">
-        <option value="Income">Income</option>
-        <option value="Expense">Expense</option>
-    </select>
-
-    <input type="date" id="date">
-    <input type="number" id="amount" placeholder="Amount">
-
-    <button onclick="addTransaction()">Add Transaction</button>
-
-    <table id="ledger">
-        <thead>
-            <tr>
-                <th>Date</th>
-                <th>Particular</th>
-                <th>Type</th>
-                <th>Amount</th>
-            </tr>
-        </thead>
-        <tbody></tbody>
-    </table>
-</section>
-
-<!-- GALLERY -->
-<section id="gallery" class="page hidden">
-    <h2>🖼 Memory Timeline</h2>
-
-    <input type="file" id="photoInput" accept="image/*">
-    <input type="date" id="photoDate">
-    <textarea id="description" placeholder="Write your memory..."></textarea>
-
-    <button onclick="addMemory()">Save Memory</button>
-
-    <div id="timeline"></div>
-</section>
-
-<!-- MISC -->
-<section id="misc" class="page hidden">
-    <h2>📂 Miscellaneous</h2>
-    <p>Future expansion area.</p>
-</section>
-
-<!-- SETTINGS -->
-<section id="settings" class="page hidden">
-    <h2>⚙ Settings</h2>
-
-    <input type="password" id="newPin" maxlength="4" placeholder="New 4-digit PIN">
-    <button onclick="changePin()">Change PIN</button>
-
-    <button onclick="clearData()">Clear All Data</button>
-</section>
+    <div class="card">
+        <a href="#">📝 Posts (Coming Soon)</a>
+    </div>
 
 </div>
 
-<script src="app.js"></script>
-
-<script>
-if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('service-worker.js');
-}
-</script>
+<footer>
+    © 2026 My Personal App
+</footer>
 
 </body>
 </html>
