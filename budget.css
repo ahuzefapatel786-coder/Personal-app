@@ -1,0 +1,35 @@
+body {
+    font-family: Arial;
+    padding: 20px;
+}
+
+.summary div {
+    margin: 8px 0;
+    font-size: 18px;
+}
+
+.balance {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.hidden {
+    display: none;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: center;
+}
+
+button {
+    padding: 8px 12px;
+    margin: 5px;
+    cursor: pointer;
+}
