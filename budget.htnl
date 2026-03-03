@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Budget Dashboard</title>
+    <link rel="stylesheet" href="budget.css">
+</head>
+<body>
+
+<h1>Budget Dashboard</h1>
+
+<!-- SUMMARY SECTION -->
+<div class="summary">
+    <div>Total Income: ₹ <span id="totalIncome">0</span></div>
+    <div>Total Expenses: ₹ <span id="totalExpense">0</span></div>
+    <div>Total Qardan Hasana: ₹ <span id="totalHasana">0</span></div>
+    <div>Total Quarterly Payment: ₹ <span id="totalQuarterly">0</span></div>
+    <div>Total Provided: ₹ <span id="totalProvided">0</span></div>
+    <div class="balance">Current Balance: ₹ <span id="currentBalance">0</span></div>
+</div>
+
+<br>
+
+<button onclick="toggleForm()">Enter Budget Data</button>
+<button onclick="toggleTable()">View Budget Data</button>
+
+<!-- FORM SECTION -->
+<div id="formSection" class="hidden">
+    <h2>Enter Budget Data</h2>
+    <form id="budgetForm">
+        <input type="date" id="date" required><br><br>
+
+        <select id="type" required>
+            <option value="">Select Type</option>
+            <option value="income">Income</option>
+            <option value="expense">Expense</option>
+            <option value="hasana">Qardan Hasana</option>
+            <option value="quarterly">Quarterly Payment</option>
+            <option value="provided">Provided</option>
+        </select><br><br>
+
+        <input type="number" id="amount" placeholder="Amount" required><br><br>
+
+        <input type="text" id="remarks" placeholder="Remarks"><br><br>
+
+        <button type="submit">Save</button>
+    </form>
+</div>
+
+<!-- TABLE SECTION -->
+<div id="tableSection" class="hidden">
+    <h2>All Transactions</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Type</th>
+                <th>Amount</th>
+                <th>Remarks</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody id="transactionTable"></tbody>
+    </table>
+
+    <br>
+    <button onclick="downloadPDF()">Download PDF</button>
+    <button onclick="downloadExcel()">Download Excel</button>
+</div>
+
+<script src="budget.js"></script>
+</body>
+</html>
